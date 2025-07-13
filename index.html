@@ -18,7 +18,7 @@
       #skills,
       #resources,
       #blogs {
-        background-color: #1a1a1a;
+        background-color: #111;
         padding: 6rem 0;
       }
 
@@ -89,9 +89,43 @@
           grid-template-columns: repeat(3, 1fr);
         }
       }
+
+      .s-footer__block--end .social-icons {
+        margin-top: 1.5rem;
+        display: flex;
+        gap: 1.2rem;
+        align-items: center;
+      }
+
+      .s-footer__block--end .social-icons a {
+        color: #fff;
+        font-size: 1.4rem;
+        transition: color 0.3s ease;
+      }
+
+      .s-footer__block--end .social-icons a:hover {
+        color: #e63946;
+      }
+
+      .s-header__logo {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 1000;
+      }
+
+      .s-header__logo img {
+        height: 48px;
+        width: auto;
+      }
     </style>
 </head>
 <body id="top">
+<div class="s-header__logo">
+  <a href="index.html">
+    <img src="images/Copilot_20250713_105809-removebg-preview.png" alt="Siddhartha Subudhi Logo">
+  </a>
+</div>
 
 <!-- Header -->
 <header class="s-header">
@@ -133,10 +167,13 @@
                 </p>
                 <footer>
                     <div class="s-hero__content-social">
-                        <a href="https://github.com/siddhartha-subudhi"><i class="fab fa-github"></i></a>
-                        <a href="https://linkedin.com/in/siddhartha-subudhi"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="mailto:hello@siddharthasubudhi.com"><i class="fas fa-envelope"></i></a>
-                    </div>
+  <a href="https://github.com/siddhartha-subudhi" target="_blank"><i class="fab fa-github"></i></a>
+  <a href="https://linkedin.com/in/siddhartha-subudhi" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+  <a href="mailto:hello@siddharthasubudhi.com"><i class="fas fa-envelope"></i></a>
+  <a href="\pdf\resume\Siddhartha_Subudhi_Data_Engineer.pdf" target="_blank" title="Download Resume"><i class="fas fa-file-alt"></i></a>
+</div>
+
+                    
                 </footer>
             </div>
         </div>
@@ -279,39 +316,51 @@
         </div>
     </div>
 </section>
-
 <!-- Footer -->
 <footer class="s-footer">
-    <div class="row row-y-top">
-        <div class="column large-8 medium-12">
-            <div class="row">
-                <div class="column large-7 tab-12 s-footer__block">
-                    <h4 class="h6">Location</h4>
-                    <p>Bengaluru, India<br><a></a>
-                </div>
-                <div class="column large-5 tab-12 s-footer__block">
-                    <h4 class="h6">Follow Me</h4>
-                    <ul class="s-footer__list">
-                        <li><a href="https://github.com/siddhartha-subudhi">GitHub</a></li>
-                        <li><a href="https://linkedin.com/in/siddhartha-subudhi">LinkedIn</a></li>
-                        <li><a href="https://medium.com/@siddhartha.subudhi">Medium</a></li>
-                        <li><a href="mailto:hello@siddharthasubudhi.com">Email</a></li>
-                    </ul>
-                </div>
-            </div>
+  <div class="row row-y-top">
+    <div class="column large-8 medium-12">
+      <div class="row">
+        <div class="column large-7 tab-12 s-footer__block">
+          <h4 class="h6">Location</h4>
+          <p>Bengaluru, India</p>
         </div>
-        <div class="column large-4 medium-12 s-footer__block--end">
-            <a href="mailto:hello@siddharthasubudhi.com" class="btn h-full-width">Let's Talk</a>
-            <div class="ss-copyright">
-                <span>&copy; 2025 Siddhartha Subudhi</span>
-                
-            </div>
+
+        <div class="column large-5 tab-12 s-footer__block">
+          <h4 class="h6">Follow Me</h4>
+          <ul class="s-footer__list">
+            <li><a href="https://github.com/siddhartha-subudhi" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+            <li><a href="https://linkedin.com/in/siddhartha-subudhi" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+            <li><a href="https://medium.com/@siddhartha.subudhi" target="_blank"><i class="fab fa-medium"></i> Medium</a></li>
+            <li><a href="mailto:hello@siddharthasubudhi.com"><i class="fas fa-envelope"></i> Email</a></li>
+          </ul>
         </div>
-        <div class="ss-go-top">
-            <a class="smoothscroll" title="Back to Top" href="#top">Top</a>
-        </div>
+      </div>
     </div>
+
+    <div class="column large-4 medium-12 s-footer__block--end">
+      <a href="mailto:hello@siddharthasubudhi.com" class="btn h-full-width">Let's Talk</a>
+
+      <!-- Social Icons with Font Awesome -->
+      <div class="social-icons">
+        <a href="https://github.com/siddhartha-subudhi" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/siddhartha-subudhi" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://medium.com/@siddhartha.subudhi" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
+        <a href="mailto:hello@siddharthasubudhi.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+
+      <div class="ss-copyright">
+        <span>&copy; 2025 Siddhartha Subudhi</span>
+      </div>
+    </div>
+
+    <div class="ss-go-top">
+      <a class="smoothscroll" title="Back to Top" href="#top">Top</a>
+    </div>
+  </div>
 </footer>
+
+
 <!-- Blog Script -->
 <script>
   const rssFeed = "https://medium.com/feed/@siddhartha.subudhi";
