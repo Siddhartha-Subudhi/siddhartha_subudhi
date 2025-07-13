@@ -145,24 +145,42 @@
 </section>
 
 <!-- Blogs Section -->
-<section id="blogs" class="s-about">
-    <div class="row">
+<section id="blogs" class="s-blogs">
+    <div class="row section-header" data-aos="fade-up">
         <div class="column large-12">
-            <div class="section-title" data-num="03" data-aos="fade-up">
-                <h3 class="h6">Latest Blogs</h3>
-            </div>
+            <h3 class="section-title">Latest Blogs</h3>
+            <p>Auto-fetched from my Medium profile</p>
         </div>
     </div>
-    <div class="row block-large-1-2 block-tab-full s-about__process item-list">
-        <div class="column item item-process" data-aos="fade-up">
-            <h3 class="item-title"><a href="https://medium.com/@siddhartha.subudhi">Understanding Spark Execution</a></h3>
-            <p>Dive into how Spark breaks jobs into stages and tasks. Perfect for interview prep.</p>
-        </div>
-        <div class="column item item-process" data-aos="fade-up">
-            <h3 class="item-title"><a href="https://medium.com/@siddhartha.subudhi">Azure Data Factory Best Practices</a></h3>
-            <p>Learn how to optimize your pipelines for performance and cost.</p>
-        </div>
+
+    <div class="row blogs-content" id="blog-list">
+        <!-- Blog posts will load here -->
     </div>
+</section>
+
+<script>
+fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@siddhartha-subudhi')
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById('blog-list');
+    data.items.slice(0, 5).forEach(post => {
+      const blogDiv = document.createElement('div');
+      blogDiv.className = 'column large-12';
+      blogDiv.innerHTML = `
+        <div class="blog-post">
+          <h4><a href="${post.link}" target="_blank">${post.title}</a></h4>
+          <p>${post.pubDate.split(' ')[0]} • ${post.categories.join(', ')}</p>
+        </div>
+      `;
+      container.appendChild(blogDiv);
+    });
+  })
+  .catch(error => {
+    console.error('Error fetching blog feed:', error);
+    document.getElementById('blog-list').innerHTML = '<p>Unable to load blogs. Please try again later.</p>';
+  });
+</script>
+
 </section>
 
 <!-- Resources Section -->
