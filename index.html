@@ -9,25 +9,95 @@
     <link rel="stylesheet" href="css/vendor.css">
     <script src="js/modernizr.js"></script>
     <script defer src="js/fontawesome/all.min.js"></script>
-    <link rel="apple-touch-icon" sizes="180x180" href="images\icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images\icon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images\icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon.png">
     <link rel="manifest" href="site.webmanifest">
+    <style>
+      #about,
+      #skills,
+      #resources,
+      #blogs {
+        background-color: #1a1a1a;
+        padding: 6rem 0;
+      }
+
+      #blogs .section-header {
+        text-align: center;
+        color: #fff;
+        margin-bottom: 3rem;
+      }
+
+      #blogs .blog-card {
+        background: #1a1a1a;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        transition: transform 0.3s ease;
+      }
+
+      #blogs .blog-card:hover {
+        transform: translateY(-6px);
+      }
+
+      #blogs .blog-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      #blogs .blog-card-content {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+      }
+
+      #blogs .blog-card-content h4 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        color: #fff;
+      }
+
+      #blogs .blog-card-content p {
+        font-size: 0.9rem;
+        color: #aaa;
+        margin-bottom: 1rem;
+      }
+
+      #blogs .blog-card-content a {
+        color: #e63946;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      @media (min-width: 768px) {
+        #blog-list {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        #blog-list {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    </style>
 </head>
 <body id="top">
-
-<!-- Preloader -->
-<div id="preloader">
-    <div id="loader" class="dots-fade">
-        <div></div><div></div><div></div>
-    </div>
-</div>
 
 <!-- Header -->
 <header class="s-header">
     <div class="s-header__logo">
         <a href="index.html">
-            <img src="images\Copilot_20250713_105809-removebg-preview.png" alt="Siddhartha Subudhi Logo" style="height: 48px; width: auto;">
+            <img src="images/Copilot_20250713_105809-removebg-preview.png" alt="Siddhartha Subudhi Logo" style="height: 48px; width: auto;">
         </a>
     </div>
     <div class="s-header__content">
@@ -145,109 +215,26 @@
 </section>
 
 <!-- Blogs Section -->
-<!-- Blogs Section -->
-<section id="blogs" class="s-blogs">
-  <div class="row section-header" data-aos="fade-up">
+<section id="blogs" class="s-about">
+  <div class="row">
+    <div class="column large-12">
+      <div class="section-title" data-num="03" data-aos="fade-up">
+        <h3 class="h6">Latest Blogs</h3>
+      </div>
+    
     <div class="column large-12">
       <h3 class="section-title">Latest Blogs</h3>
-      <p>Fetched from Medium — with thumbnails</p>
+      
     </div>
   </div>
 
-  <div class="row blogs-content blog-cards" id="blog-list">
-    <p>Loading...</p>
+  <div class="row blogs-content" id="blog-list">
+    <p>Loading blogs...</p>
   </div>
 </section>
 
-<style>
-  .blog-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-  }
-  .blog-card {
-    width: 300px;
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    overflow: hidden;
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s;
-  }
-  .blog-card:hover {
-    transform: translateY(-6px);
-  }
-  .blog-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-  }
-  .blog-card-content {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-  }
-  .blog-card h4 {
-    font-size: 1.1rem;
-    margin: 0 0 0.5rem;
-  }
-  .blog-card p {
-    font-size: 0.85rem;
-    color: #555;
-  }
-  .blog-card a {
-    color: #0077cc;
-    font-weight: 600;
-    text-decoration: none;
-    margin-top: auto;
-  }
-</style>
 
-<script>
-  const rssFeed = "https://medium.com/feed/@siddhartha.subudhi";
-  const apiUrl = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(rssFeed);
 
-  fetch(apiUrl)
-    .then(response => response.json())
-    .then(data => {
-      const blogContainer = document.getElementById("blog-list");
-      blogContainer.innerHTML = "";
-
-      if (data.items && data.items.length > 0) {
-        const blogs = data.items
-          .filter(item => item.categories.length > 0)
-          .slice(0, 5);
-
-        blogs.forEach(blog => {
-          const imgRegex = /<img.*?src="(.*?)"/;
-          const imgMatch = blog.content.match(imgRegex);
-          const imgSrc = imgMatch ? imgMatch[1] : "https://via.placeholder.com/300x180?text=Medium+Blog";
-
-          const card = document.createElement("div");
-          card.className = "blog-card";
-
-          card.innerHTML = `
-            <img src="${imgSrc}" alt="Blog image">
-            <div class="blog-card-content">
-              <h4>${blog.title}</h4>
-              <p>${new Date(blog.pubDate).toDateString()}</p>
-              <a href="${blog.link}" target="_blank">Read More →</a>
-            </div>
-          `;
-
-          blogContainer.appendChild(card);
-        });
-      } else {
-        blogContainer.innerHTML = "<p>No blog posts found.</p>";
-      }
-    })
-    .catch(error => {
-      console.error("Error fetching blogs:", error);
-      document.getElementById("blog-list").innerHTML = "<p>Unable to load blogs. Please try again later.</p>";
-    });
-</script>
 
 <!-- Resources Section -->
 <section id="resources" class="s-services">
@@ -300,7 +287,7 @@
             <div class="row">
                 <div class="column large-7 tab-12 s-footer__block">
                     <h4 class="h6">Location</h4>
-                    <p>Bengaluru, India<br><a href="tel:+91XXXXXXXXXX">+91 XXXXXXXXXX</a></p>
+                    <p>Bengaluru, India<br><a></a>
                 </div>
                 <div class="column large-5 tab-12 s-footer__block">
                     <h4 class="h6">Follow Me</h4>
@@ -325,41 +312,53 @@
         </div>
     </div>
 </footer>
+<!-- Blog Script -->
 <script>
-    const rss_url = "https://medium.com/feed/@siddhartha.subudhi";
-    const api_url = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(rss_url);
+  const rssFeed = "https://medium.com/feed/@siddhartha.subudhi";
+  const apiUrl = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(rssFeed);
 
-    fetch(api_url)
-        .then(response => response.json())
-        .then(data => {
-            const container = document.getElementById("blog-list");
-            container.innerHTML = "";
+  fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+      const blogContainer = document.getElementById("blog-list");
+      blogContainer.innerHTML = "";
 
-            if (data.items && data.items.length > 0) {
-                data.items
-                    .filter(item => item.categories.length > 0)
-                    .slice(0, 5)
-                    .forEach(post => {
-                        const div = document.createElement("div");
-                        div.className = "column large-12 blog-post";
-                        div.innerHTML = `
-                            <h4 style="margin-bottom: 0.5rem;">
-                                <a href="${post.link}" target="_blank">${post.title}</a>
-                            </h4>
-                            <p style="margin-bottom: 1rem; font-size: 0.9rem; color: #777;">
-                                ${new Date(post.pubDate).toDateString()} • ${post.categories.join(', ')}
-                            </p>
-                        `;
-                        container.appendChild(div);
-                    });
-            } else {
-                container.innerHTML = "<p>No recent blog posts found.</p>";
-            }
-        })
-        .catch(error => {
-            console.error("Error fetching Medium feed:", error);
-            document.getElementById("blog-list").innerHTML = "<p>Unable to load blogs. Please try again later.</p>";
+      if (data.items && data.items.length > 0) {
+        const blogs = data.items
+          .filter(item => item.categories.length > 0)
+          .slice(0, 6);
+
+        blogs.forEach(blog => {
+          let imgSrc = "";
+          const imgMatch = blog.content.match(/<img.*?src=\"(.*?)\"/);
+
+          if (imgMatch && imgMatch[1]) {
+            imgSrc = imgMatch[1];
+          } else {
+            imgSrc = "https://via.placeholder.com/600x350?text=Medium+Blog";
+          }
+
+          const blogCard = document.createElement("div");
+          blogCard.className = "blog-card";
+          blogCard.innerHTML = `
+            <img src="${imgSrc}" alt="Blog image">
+            <div class="blog-card-content">
+              <h4>${blog.title}</h4>
+              <p>${new Date(blog.pubDate).toDateString()}</p>
+              <a href="${blog.link}" target="_blank" rel="noopener noreferrer">Read More →</a>
+            </div>
+          `;
+          blogContainer.appendChild(blogCard);
         });
+      } else {
+        blogContainer.innerHTML = "<p>No blog posts found.</p>";
+      }
+    })
+    .catch(error => {
+      console.error("Error fetching blogs:", error);
+      document.getElementById("blog-list").innerHTML =
+        "<p>Unable to load blogs. Please try again later.</p>";
+    });
 </script>
 
 <!-- Scripts -->
@@ -367,4 +366,3 @@
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
 </body>
-</html>
