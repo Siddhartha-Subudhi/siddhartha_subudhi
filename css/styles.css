@@ -90,6 +90,7 @@
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Nunito+Sans:300,300i,400,400i,600,600i,700,700i&display=swap");
 
+
 :root {
     --font-1: "Nunito Sans", sans-serif;
     --font-2: "Montserrat", sans-serif;
@@ -105,28 +106,34 @@
  * ------------------------------------------------------------------- */
 :root {
 
-    /* color-1(#d9083c)
-     * color-2(#eb5e55)
-     * color-3(#f2d0a4)
+    /* New Color Palette
+     * Based on user request: white, charcoal gray, gold, navy blue, teal, and silver.
      */
-    --color-1: hsla(345, 93%, 44%, 1);
-    --color-2: hsla(4, 79%, 63%, 1);
-    --color-3: hsla(34, 75%, 80%, 1);
+    --color-white    : #ffffff;
+    --color-charcoal : #36454F;
+    --color-gold     : #FFD700;
+    --color-navy-blue: #000080;
+    --color-teal     : #008080;
+    --color-silver   : #C0C0C0;
 
-    /* theme color variations
+    /* Theme colors mapped to the new palette
      */
-    --color-1-lighter: hsla(345, 93%, 64%, 1);
-    --color-1-light  : hsla(345, 93%, 54%, 1);
-    --color-1-dark   : hsla(345, 93%, 34%, 1);
-    --color-1-darker : hsla(345, 93%, 24%, 1);
-    --color-2-lighter: hsla(4, 79%, 83%, 1);
-    --color-2-light  : hsla(4, 79%, 73%, 1);
-    --color-2-dark   : hsla(4, 79%, 53%, 1);
-    --color-2-darker : hsla(4, 79%, 43%, 1);
+    --color-1: var(--color-navy-blue);
+    --color-2: var(--color-teal);
+    --color-3: var(--color-gold);
 
-    /* feedback colors
-     * color-error(#ffd1d2), color-success(#c8e675), 
-     * color-info(#d7ecfb), color-notice(#fff099)
+    /* theme color variations - adjusted to new palette
+     */
+    --color-1-lighter: #2020A0; /* Lighter Navy Blue */
+    --color-1-light  : #101090; /* Light Navy Blue */
+    --color-1-dark   : #000060; /* Dark Navy Blue */
+    --color-1-darker : #000040; /* Darker Navy Blue */
+    --color-2-lighter: #20A0A0; /* Lighter Teal */
+    --color-2-light  : #109090; /* Light Teal */
+    --color-2-dark   : #006060; /* Dark Teal */
+    --color-2-darker : #004040; /* Darker Teal */
+
+    /* feedback colors - keep as is or adjust if needed
      */
     --color-error          : hsla(359, 100%, 91%, 1);
     --color-success        : hsla(76, 69%, 68%, 1);
@@ -137,17 +144,14 @@
     --color-info-content   : hsla(205, 32%, 31%, 1);
     --color-notice-content : hsla(51, 30%, 30%, 1);
 
-    /* shades 
-     * generated using 
-     * Tint & Shade Generator 
-     * (https://maketintsandshades.com/)
+    /* shades - map existing grays to the new palette
      */
     --color-black  : #000000;
     --color-gray-19: #0b0b0c;
     --color-gray-18: #161719;
     --color-gray-17: #202225;
     --color-gray-16: #2b2e32;
-    --color-gray-15: #363a3f;
+    --color-gray-15: var(--color-charcoal); /* Main charcoal color */
     --color-gray-14: #41454b;
     --color-gray-13: #4c5158;
     --color-gray-12: #565c64;
@@ -173,26 +177,25 @@
 
     /* buttons
      */
-    --color-btn                   : var(--color-gray-15);
+    --color-btn                   : var(--color-charcoal);
     --color-btn-text              : var(--color-white);
-    --color-btn-hover             : var(--color-white);
-    --color-btn-hover-text        : var(--color-black);
-    --color-btn-primary           : var(--color-1);
+    --color-btn-hover             : var(--color-gold);
+    --color-btn-hover-text        : var(--color-charcoal);
+    --color-btn-primary           : var(--color-navy-blue);
     --color-btn-primary-text      : var(--color-white);
-    --color-btn-primary-hover     : var(--color-white);
-    --color-btn-primary-hover-text: var(--color-black);
-    --color-btn-stroke            : var(--color-white);
-    --color-btn-stroke-text       : var(--color-white);
-    --color-btn-stroke-hover      : var(--color-white);
-    --color-btn-stroke-hover-text : var(--color-black);
+    --color-btn-primary-hover     : var(--color-gold);
+    --color-btn-primary-hover-text: var(--color-charcoal);
+    --color-btn-stroke            : var(--color-silver);
+    --color-btn-stroke-text       : var(--color-silver);
+    --color-btn-stroke-hover      : var(--color-silver);
+    --color-btn-stroke-hover-text : var(--color-charcoal);
 
     /* others
      */
-    --color-body  : var(--color-1);
-    --color-bg    : #14171B;
-    --color-border: var(--color-gray-17);
+    --color-body  : var(--color-charcoal);
+    --color-bg    : var(--color-white);
+    --color-border: var(--color-silver);
 }
-
 
 /* ------------------------------------------------------------------- 
  * ## vertical spacing and typescale
@@ -2591,6 +2594,7 @@ input::-moz-focus-inner {
     max-width: 62rem;
     padding-top: var(--vspace-2_5);
     position: relative;
+    
 }
 
 .pull-quote blockquote p {
@@ -3477,24 +3481,22 @@ input::-moz-focus-inner {
  *
  * ------------------------------------------------------------------- */
 .s-hero {
-    background-color: #121417;
-    width: 100%;
-    height: 100vh;
-    min-height: calc(25.5 * var(--space));
-    overflow: hidden;
-    position: relative;
-}
+  /* Set the background image here */
+  background-image: url(../images/18986364_6084719.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 
-.s-hero__bg {
-    background-image: url(../images/hero-bg.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 36.5vw;
+  /* The background color acts as a fallback if the image fails to load */
+  background-color: #ffffff;
+  width: 100%;
+  height: 100vh;
+  min-height: calc(25.5 * var(--space));
+  overflow: hidden;
+  position: relative;
+}
+.s-hero__content-about p {
+    color: var(--color-white); /* This will change the text to white */
 }
 
 .s-hero__bg::after {
@@ -3509,7 +3511,7 @@ input::-moz-focus-inner {
     opacity: .25;
 }
 
-.s-hero__bg .gradient-overlay {
+/* .s-hero__bg .gradient-overlay {
     display: block;
     position: absolute;
     top: 0;
@@ -3520,7 +3522,7 @@ input::-moz-focus-inner {
     background: linear-gradient(180deg, black 10%, rgba(0, 0, 0, 0) 100%);
     opacity: .35;
 }
-
+ */
 
 /* ------------------------------------------------------------------- 
  * ## hero content
@@ -3540,7 +3542,7 @@ input::-moz-focus-inner {
     font-weight: 600;
     letter-spacing: -.04em;
     line-height: 1;
-    color: var(--color-1);
+    color: var(--color-gold);
     margin-bottom: 0;
     position: relative;
 }
@@ -3550,7 +3552,7 @@ input::-moz-focus-inner {
     content: "";
     height: 10rem;
     width: 20rem;
-    background-image: url(../images/dots.svg);
+    /* background-image: url(../images/dots.svg); */
     -webkit-transform: translateX(-4rem);
     transform: translateX(-4rem);
     opacity: .25;
@@ -3686,6 +3688,9 @@ input::-moz-focus-inner {
 .s-hero__scroll-link:hover, 
 .s-hero__scroll-link:focus {
     color: white;
+}
+.s-hero__scroll-link {
+  color: var(--color-gold);
 }
 
 
@@ -4697,9 +4702,14 @@ html.no-csstransitions .s-hero__content {
  *
  * ------------------------------------------------------------------- */
 .s-contact {
-    background-color: var(--color-1);
+    background-color: var(--color-white);
     padding-top: calc(6 * var(--space));
     padding-bottom: var(--vspace-2);
+}
+.s-contact h3,
+.s-contact h1,
+.s-contact p {
+    color: var(--color-navy-blue); /* A dark gray for good contrast */
 }
 
 .s-contact__top .h6 {
@@ -4759,11 +4769,11 @@ html.no-csstransitions .s-hero__content {
 .s-footer {
     padding-top: var(--vspace-2);
     padding-bottom: var(--vspace-4);
-    color: white;
+    color: var(--color-teal);
 }
 
 .s-footer a {
-    color: white;
+    color: var(--color-gold);
 }
 
 .s-footer .h6 {
@@ -4803,9 +4813,9 @@ html.no-csstransitions .s-hero__content {
 }
 
 .s-footer__block--end .btn {
-    background-color: white;
-    border: .2rem solid white;
-    color: black;
+    background-color: var(--color-navy-blue);
+    border: .2rem solid var(--color-navy-blue);
+    color: #ffffff;
     margin-right: 0;
     margin-bottom: var(--vspace-1);
 }
@@ -4829,7 +4839,13 @@ html.no-csstransitions .s-hero__content {
     padding-left: 0;
 }
 
+.s-footer__block--end .btn:hover, .s-footer__block--end .btn:focus {
 
+ background-color: var(--color-gray-19);
+border: 0.2rem solid var(--color-gray-19);
+ color: white;
+
+}
 /* ------------------------------------------------------------------- 
  * ## copyright
  * ------------------------------------------------------------------- */
@@ -4965,5 +4981,332 @@ html.no-csstransitions .s-hero__content {
     }
     .ss-copyright {
         font-size: 1.4rem;
+    }
+}
+/* 
+/* ===================================================================
+ * # blogs
+ * ------------------------------------------------------------------- */
+#blogs {
+    background-color: var(--color-white);
+    padding: 6rem 0;
+}
+
+#blogs .section-header {
+    text-align: center;
+    color:  var(--color-gold);;
+    margin-bottom: 3rem;
+}
+
+/* This style ensures the grid container is correctly set up */
+.blog-list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+}
+
+/* This makes sure each card itself stretches to the full height of the grid row */
+.blog-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Important: This ensures all cards have the same height */
+    background: var(--color-silver);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+/* This makes the inner content of each card fill all available space */
+.blog-card-content {
+    flex-grow: 1; /* This is key to forcing all content sections to be equal height */
+    padding: 1.5rem;
+    display: flex;
+    color: var(--color-gold);
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.blog-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--color-white); /* Ensure text is visible on the image */
+}
+
+.blog-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.blog-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 60%);
+}
+
+
+
+
+.blog-card-content h4 {
+    font-size: 1.5rem;
+    color: var(--color-gold);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.blog-card-content p {
+    font-size: 0.9rem;
+   
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
+.blog-card-content .date {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    
+}
+
+.resource-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+} */
+ */
+
+/* ===================================================================
+ * # skills
+ * ------------------------------------------------------------------- */
+/* Styling for skill images */
+/* Styling for skill images */
+.item-service {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This centers the image and text */
+    text-align: center; /* This centers the text within its container */
+    gap: 10px; /* Adjust spacing between the icon and the title */
+}
+
+.skill-icon {
+    width: 100px; /* Set the icon size */
+    height: 100px;
+    flex-shrink: 0;
+}
+
+.item-service h3 {
+    margin-top: 0;
+}
+
+
+
+/* Styling for the new resource card design */
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.resource-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--color-silver);
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    text-decoration: none;
+    color: var(--color-navy-blue);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.resource-card-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    background-color: var(--color-navy-blue);
+    border-bottom: 3px solid var(--color-gold);
+}
+
+.resource-logo {
+    width: 64px;
+    height: 64px;
+}
+
+.resource-card-content {
+    flex-grow: 1;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.resource-card-content h4 {
+    color: var(--color-navy-blue);
+    margin-bottom: 0.5rem;
+}
+
+.resource-card-content p {
+    color: var(--color-gray-dark);
+}
+@import url('https://fonts.googleapis.com/css?family=Heebo:400,700|Open+Sans:400,700');
+
+/* ===================================================================
+ * # Card Grid Layout
+ * ------------------------------------------------------------------- */
+.cards-wrapper {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 4rem;
+    padding: 4rem;
+    margin: 0 auto;
+}
+
+/* This is the new rule to fix the row layout */
+.row > .cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 4rem;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.card {
+    font-family: 'Heebo';
+    --bg-filter-opacity: 0.5;
+    background-image: linear-gradient(rgba(0,0,0,var(--bg-filter-opacity)),rgba(0,0,0,var(--bg-filter-opacity))), var(--bg-img);
+    height: 20em;
+    width: 15em;
+    font-size: 1.2em;
+    color: white;
+    border-radius: 1em;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 5em -1em black;
+    transition: all 0.5s;
+    position: relative;
+    overflow: hidden;
+    border: 10px solid var(--color-silver);
+    text-decoration: none;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card h1 {
+    margin: 0;
+    font-size: 1.0em;
+    line-height: 1.2em;
+}
+
+.card p {
+    font-size: 0.50em;
+    font-family: 'Open Sans';
+    margin-top: 0.5em;
+    line-height: 2em;
+}
+
+.card .tags {
+    display: flex;
+    margin-top: 0.5em;
+}
+
+.card .tags .tag {
+    font-size: 0.5em;
+    background: rgba(255,255,255,0.5);
+    border-radius: 0.3rem;
+    padding: 0 0.5em;
+    margin-right: 0.5em;
+    line-height: 1.5em;
+    transition: all 0.5s;
+}
+
+.card:hover .tags .tag {
+    background: var(--color-gold);
+    color: var(--color-navy-blue);
+}
+
+.card:before, .card:after {
+    content: '';
+    transform: scale(0);
+    transform-origin: top left;
+    border-radius: 50%;
+    position: absolute;
+    left: -50%;
+    top: -50%;
+    z-index: -5;
+    transition: all 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+.card:before {
+    background: var(--color-silver);
+    width: 250%;
+    height: 250%;
+}
+
+.card:after {
+    background: var(--color-white);
+    width: 200%;
+    height: 200%;
+}
+
+.card:hover {
+    color: var(--color-navy-blue);
+}
+
+.card:hover:before, .card:hover:after {
+    transform: scale(1);
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1285px) {
+    .cards-wrapper {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+@media screen and (max-width: 900px) {
+    .cards-wrapper {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+    }
+    .card {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .cards-wrapper {
+        padding: 4rem 2rem;
     }
 }
