@@ -16,20 +16,20 @@
     <style>
       #about,
       #skills,
-      #resources,
-      #blogs {
-        background-color: #111;
+      #resources
+      /* #blogs {
+        background-color: var(--color-white);
         padding: 6rem 0;
       }
 
       #blogs .section-header {
         text-align: center;
-        color: #fff;
+        color: var(--color-navy-blue);
         margin-bottom: 3rem;
       }
 
       #blogs .blog-card {
-        background: #1a1a1a;
+        background: var(--color-silver);
         border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 4px 16px rgba(0,0,0,0.2);
@@ -60,21 +60,21 @@
       #blogs .blog-card-content h4 {
         font-size: 1.2rem;
         margin-bottom: 0.5rem;
-        color: #fff;
+        color: var(--color-gold);
       }
 
       #blogs .blog-card-content p {
         font-size: 0.9rem;
-        color: #aaa;
+        color: var(--color-silver);
         margin-bottom: 1rem;
       }
 
       #blogs .blog-card-content a {
-        color: #e63946;
+        color: var(--color-teal);
         text-decoration: none;
         font-weight: 600;
         font-size: 0.9rem;
-      }
+      } */
 
       @media (min-width: 768px) {
         #blog-list {
@@ -104,7 +104,7 @@
       }
 
       .s-footer__block--end .social-icons a:hover {
-        color: #e63946;
+        color: #fff;
       }
 
       .s-header__logo {
@@ -125,10 +125,10 @@
 
 <!-- Header -->
 <header class="s-header">
-    <div class="s-header__logo">
+    <!-- <div class="s-header__logo">
         <a href="index.html">
             <img src="images/Copilot_20250713_105809-removebg-preview.png" alt="Siddhartha Subudhi Logo">
-        </a>
+        </a> -->
     </div>
 
     <div class="s-header__content">
@@ -150,9 +150,9 @@
 
 <!-- Hero Section -->
 <section id="hero" class="s-hero target-section">
-    <div class="s-hero__bg">
+    <!-- <div class="s-hero__bg">
         <div class="gradient-overlay"></div>
-    </div>
+    </div> -->
     <div class="row s-hero__content">
         <div class="column">
             <h1>Hello.</h1>
@@ -195,7 +195,7 @@
             <p class="lead" data-aos="fade-up">With 6+ years of experience in data engineering, I've worked with Azure, ADF, Databricks, PySpark, and built scalable ETL pipelines for enterprise platforms. I also enjoy designing intuitive UIs and creating interview prep content.</p>
         </div>
         <div class="column large-6">
-            <img src="images\about-photo.png" alt="Siddhartha Subudhi" data-aos="fade-up" style="border-radius: 12px;">
+            <img src="images\avatars\freepik__the-style-is-candid-image-photography-with-natural__74223.png" alt="Siddhartha Subudhi" data-aos="fade-up" style="border-radius: 12px;">
         </div>
     </div>
 </section>
@@ -210,61 +210,77 @@
         </div>
     </div>
     <div class="row block-large-1-3 block-tab-full s-services__services item-list">
+
         <div class="column item item-service" data-aos="fade-up">
-  <h3 class="item-title">Databricks</h3>
-  <p>Efficiently engineered data pipelines and transformations using Databricks and Delta Lake.</p>
-</div>
+            <img src="images/skills/10787-icon-service-Azure-Databricks.svg" alt="Databricks logo" class="skill-icon">
+            <h3 class="item-title">Databricks</h3>
+            <p>Efficiently engineered data pipelines and transformations using Databricks and Delta Lake.</p>
+        </div>
 
-<div class="column item item-service" data-aos="fade-up">
-  <h3 class="item-title">Azure Data Factory</h3>
-  <p>Built automated and scalable ETL workflows using ADF pipelines and triggers.</p>
-</div>
+        <div class="column item item-service" data-aos="fade-up">
+            <img src="images/skills/10126-icon-service-Data-Factories.svg" alt="Azure Data Factory logo" class="skill-icon">
+            <h3 class="item-title">Azure Data Factory</h3>
+            <p>Built automated and scalable ETL workflows using ADF pipelines and triggers.</p>
+        </div>
 
-<div class="column item item-service" data-aos="fade-up">
-  <h3 class="item-title">Azure Synapse Analytics</h3>
-  <p>Integrated data warehousing and analytics using Synapse SQL and pipelines.</p>
-</div>
+        <div class="column item item-service" data-aos="fade-up">
+            <img src="images/skills/00606-icon-service-Azure-Synapse-Analytics.svg" alt="Azure Synapse Analytics logo" class="skill-icon">
+            <h3 class="item-title">Azure Synapse Analytics</h3>
+            <p>Integrated data warehousing and analytics using Synapse SQL and pipelines.</p>
+        </div>
 
-<div class="column item item-service" data-aos="fade-up">
-  <h3 class="item-title">SQL</h3>
-  <p>Crafted optimized queries and models to power clean, reliable analytics.</p>
-</div>
+        <div class="column item item-service" data-aos="fade-up">
+            <img src="images/skills/10132-icon-service-SQL-Server.svg" alt="SQL logo" class="skill-icon">
+            <h3 class="item-title">SQL</h3>
+            <p>Crafted optimized queries and models to power clean, reliable analytics.</p>
+        </div>
 
-<div class="column item item-service" data-aos="fade-up">
-  <h3 class="item-title">PySpark / Python</h3>
-  <p>Developed parallel data transformations and reusable logic in PySpark.</p>
-</div>
+        <div class="column item item-service" data-aos="fade-up">
+            <img src="images/skills/python-logo-only.svg" alt="Python logo" class="skill-icon">
+            <h3 class="item-title">PySpark / Python</h3>
+            <p>Developed parallel data transformations and reusable logic in PySpark.</p>
+        </div>
 
-<div class="column item item-service" data-aos="fade-up">
-  <h3 class="item-title">Power BI</h3>
-  <p>Created interactive dashboards and reports with real-time data insights.</p>
-</div>
+        <div class="column item item-service" data-aos="fade-up">
+            <img src="images/skills/03332-icon-service-Power-BI-Embedded.svg" alt="Power BI logo" class="skill-icon">
+            <h3 class="item-title">Power BI</h3>
+            <p>Created interactive dashboards and reports with real-time data insights.</p>
+        </div>
 
-<div class="column item item-service" data-aos="fade-up">
-  <h3 class="item-title">Microsoft Fabric</h3>
-  <p>Exploring unified data and analytics architecture through Microsoft Fabric.</p>
-</div>
+        <div class="column item item-service" data-aos="fade-up">
+            <img src="images/skills/Fabric_256.svg" alt="Microsoft Fabric logo" class="skill-icon">
+            <h3 class="item-title">Microsoft Fabric</h3>
+            <p>Exploring unified data and analytics architecture through Microsoft Fabric.</p>
+        </div>
+
+         <div class="column item item-service" data-aos="fade-up">
+            <img src="images/skills/Apache Airflow.svg" alt="Apache Airflow logo" class="skill-icon">
+            <h3 class="item-title">Apache Airflow</h3>
+            <p>A platform to programmatically author, schedule, and monitor data pipelines and workflows.</p>
+        </div>
+
+        <div class="column item item-service" data-aos="fade-up">
+            <img src="images/skills/Docker.svg" alt="Docker logo" class="skill-icon">
+            <h3 class="item-title">Docker</h3>
+            <p>A containerization platform that packages your application and its dependencies into a single, isolated unit.</p>
+        </div>
 
     </div>
 </section>
+</section>
 
 <!-- Blogs Section -->
-<section id="blogs" class="s-about">
-  <div class="row">
-    <div class="column large-12">
-      <div class="section-title" data-num="03" data-aos="fade-up">
-        <h3 class="h6">Latest Blogs</h3>
-      </div>
-    
-    <div class="column large-12">
-     
-      
+<section id="blogs">
+    <div class="row">
+        <div class="column large-12">
+            <div class="section-title" data-num="05" data-aos="fade-up">
+                <h3 class="h6">Blogs</h3>
+            </div>
+        </div>
     </div>
-  </div>
-
-  <div class="row blogs-content" id="blog-list">
-    <p>Loading blogs...</p>
-  </div>
+    
+    <div class="cards-wrapper" id="blog-cards-container">
+        </div>
 </section>
 
 <!-- Resources Section -->
@@ -276,33 +292,52 @@
             </div>
         </div>
     </div>
-    <div class="row block-large-1-3 block-tab-full s-services__services item-list">
-        <div class="column item item-service" data-aos="fade-up">
-            <h3 class="item-title">Must Know Before Your Next Databricks Interview</h3>
-            <p>
-                <a href="https://raw.githubusercontent.com/Siddhartha-Subudhi/siddhartha_subudhi/main/pdf/resources/Must%20Know%20Before%20Your%20Next%20Databricks%20Interview.pdf" target="_blank">
-                    Download PDF
-                </a>
-            </p>
-        </div>
-        <div class="column item item-service" data-aos="fade-up">
-            <h3 class="item-title">Must Know Pyspark Coding Before Your Next Databricks Interview</h3>
-            <p>
-                <a href="https://raw.githubusercontent.com/Siddhartha-Subudhi/siddhartha_subudhi/main/pdf/resources/Must%20Know%20Pyspark%20Coding%20Before%20Your%20Next%20Databricks%20Interview.pdf" target="_blank">
-                    Download PDF
-                </a>
-            </p>
-        </div>
-        <div class="column item item-service" data-aos="fade-up">
-            <h3 class="item-title">GitHub Projects</h3>
-            <p>
-                <a href="https://github.com/Siddhartha-Subudhi" target="_blank">Visit GitHub</a>
-            </p>
-        </div>
+    
+    <div class="cards-wrapper">
+
+        <a href="https://raw.githubusercontent.com/Siddhartha-Subudhi/siddhartha_subudhi/main/pdf/resources/Must%20Know%20Before%20Your%20Next%20Databricks%20Interview.pdf" 
+           target="_blank" 
+           class="card" 
+           style="--bg-img: url('images/Copilot_20250815_012241.png')">
+            <div>
+                <h1>Databricks Interview Guide</h1>
+                <p>Must know topics and questions for your next Databricks interview.</p>
+                <div class="tags">
+                    <span class="tag">PDF</span>
+                    <span class="tag">Databricks</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="https://raw.githubusercontent.com/Siddhartha-Subudhi/siddhartha_subudhi/main/pdf/resources/Must%20Know%20Pyspark%20Coding%20Before%20Your%20Next%20Databricks%20Interview.pdf" 
+           target="_blank" 
+           class="card" 
+           style="--bg-img: url('images/18986364_6084719.jpg')">
+            <div>
+                <h1>Pyspark Coding Guide</h1>
+                <p>Essential PySpark coding examples for your technical interviews.</p>
+                <div class="tags">
+                    <span class="tag">PDF</span>
+                    <span class="tag">PySpark</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="https://github.com/Siddhartha-Subudhi" 
+           target="_blank" 
+           class="card" 
+           style="--bg-img: url('images/vecteezy_modern-workspace-with-laptop-tablet-smartphone-and-coffee_9805357.jpg')">
+            <div>
+                <h1>GitHub Repository</h1>
+                <p>A collection of my projects and code repositories.</p>
+                <div class="tags">
+                    <span class="tag">Source Code</span>
+                    <span class="tag">Projects</span>
+                </div>
+            </div>
+        </a>
     </div>
 </section>
-
-
 
 <!-- Contact Section -->
 <section id="contact" class="s-contact">
@@ -369,52 +404,62 @@
 
 <!-- Blog Script -->
 <script>
-  const rssFeed = "https://medium.com/feed/@siddhartha.subudhi";
-  const apiUrl = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(rssFeed);
+    const rssFeed = "https://medium.com/feed/@siddhartha.subudhi";
+    const apiUrl = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(rssFeed);
+    const blogContainer = document.getElementById("blog-cards-container");
 
-  fetch(apiUrl)
-    .then(response => response.json())
-    .then(data => {
-      const blogContainer = document.getElementById("blog-list");
-      blogContainer.innerHTML = "";
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            blogContainer.innerHTML = "";
 
-      if (data.items && data.items.length > 0) {
-        const blogs = data.items
-          .filter(item => item.categories.length > 0)
-          .slice(0, 6);
+            if (data.items && data.items.length > 0) {
+                const blogs = data.items
+                    .filter(item => item.categories.length > 0)
+                    .slice(0, 6);
 
-        blogs.forEach(blog => {
-          let imgSrc = "";
-          const imgMatch = blog.content.match(/<img.*?src=\"(.*?)\"/);
+                blogs.forEach(blog => {
+                    let imgSrc = "";
+                    // Regex to extract the first image from the blog content
+                    const imgMatch = blog.content.match(/<img.*?src=\"(.*?)\"/);
 
-          if (imgMatch && imgMatch[1]) {
-            imgSrc = imgMatch[1];
-          } else {
-            imgSrc = "https://via.placeholder.com/600x350?text=Medium+Blog";
-          }
+                    if (imgMatch && imgMatch[1]) {
+                        imgSrc = imgMatch[1];
+                    } else {
+                        // Fallback image if no image is found in the content
+                        imgSrc = "https://via.placeholder.com/600x350?text=Blog";
+                    }
 
-          const blogCard = document.createElement("div");
-          blogCard.className = "blog-card";
-          blogCard.innerHTML = `
-            <img src="${imgSrc}" alt="Blog image">
-            <div class="blog-card-content">
-              <h4>${blog.title}</h4>
-              <p>${new Date(blog.pubDate).toDateString()}</p>
-              <a href="${blog.link}" target="_blank" rel="noopener noreferrer">Read More →</a>
-            </div>
-          `;
-          blogContainer.appendChild(blogCard);
+                    const card = document.createElement("a");
+                    card.className = "card";
+                    card.href = blog.link;
+                    card.target = "_blank";
+                    card.style.setProperty("--bg-img", `url('${imgSrc}')`);
+
+                    const cardContent = document.createElement("div");
+                    cardContent.innerHTML = `
+                        <h1>${blog.title}</h1>
+                        <p>${new Date(blog.pubDate).toDateString()}</p>
+                        <div class="tags">
+                           ${blog.categories.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                        </div>
+                    `;
+
+                    card.appendChild(cardContent);
+                    blogContainer.appendChild(card);
+                });
+            } else {
+                blogContainer.innerHTML = "<p>No blog posts found.</p>";
+            }
+        })
+        .catch(error => {
+            console.error("Error fetching blogs:", error);
+            blogContainer.innerHTML =
+                "<p>Unable to load blogs. Please try again later.</p>";
         });
-      } else {
-        blogContainer.innerHTML = "<p>No blog posts found.</p>";
-      }
-    })
-    .catch(error => {
-      console.error("Error fetching blogs:", error);
-      document.getElementById("blog-list").innerHTML =
-        "<p>Unable to load blogs. Please try again later.</p>";
-    });
 </script>
+
+
 
 <!-- Scripts -->
 <script src="js/jquery-3.2.1.min.js"></script>
